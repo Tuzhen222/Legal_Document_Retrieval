@@ -8,3 +8,7 @@ To use the BM25 model in this project, download the `bm25_model.pkl` checkpoint 
 
 ### Download Link
 [Download bm25_model.pkl](https://drive.google.com/file/d/1VFT7UiMXgoJzGKqWxId4LORq9v0VcW7T/view?usp=drive_link)
+
+
+#### Link model bge-m3-finetune :
+- [Quintu/bge-m3-legal_retrieval](https://huggingface.co/Quintu/bge-m3-legal_retrieval)
