@@ -1,1 +1,1 @@
-# Legal_Document_Retrieval
+# Legal-Document-Retrieval
