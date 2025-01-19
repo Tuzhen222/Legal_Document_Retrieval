@@ -43,7 +43,7 @@ Access our fine-tuned BGE-M3 model:
 * Model: [Quintu/bge-m3-legal_retrieval](https://huggingface.co/Quintu/bge-m3-legal_retrieval)
 
 ## Dataset Setup
-Download the competition dataset:
+Download the dataset:
 ```bash
 pip install gdown
 gdown --folder 1LO4wmj54lWgQvYiGKKAUSLSv5ypMjcDA
