@@ -1,18 +1,52 @@
 # Legal Document Retrieval System
 
-This project is designed for the **SOICT Legal Document Retrieval Challenge**, focusing on building an efficient and accurate system for retrieving legal documents based on semantic similarity.
+## Overview
+This project was developed for the SOICT Legal Document Retrieval Challenge, focusing on building an efficient and accurate system for retrieving Vietnamese legal documents based on semantic similarity. Our team achieved a Top 8 position in SoICT Hackathon 2024.
 
-## BM25 Checkpoint Download Instructions
+## Project Description
 
-To use the BM25 model in this project, download the `bm25_model.pkl` checkpoint from Google Drive using the link below:
+### Topic
+The Legal Document Retrieval Challenge focuses on solving the problem of querying Vietnamese legal document data, with an emphasis on semantic understanding and accurate retrieval.
 
-### Download Link
-[Download bm25_model.pkl](https://drive.google.com/file/d/1VFT7UiMXgoJzGKqWxId4LORq9v0VcW7T/view?usp=drive_link)
+### Task
+The competition centers on a single task: developing an efficient retrieval system for Vietnamese legal documents.
 
+### Data
+The competition data provided by the organizers includes three sets:
+* Training data: 119,456 labeled query-document pairs for model training
+* Public test: 10,000 queries for model evaluation
+* Private test: 50,000 queries for final evaluation
 
-### Link model bge-m3-finetune :
-[Quintu/bge-m3-legal_retrieval](https://huggingface.co/Quintu/bge-m3-legal_retrieval)
+All datasets share a common repository of legal documents.
 
+### Evaluation Metric
+The system performance is evaluated using MRR@10 (Mean Reciprocal Rank at 10), which represents the system's ability to find relevant documents in the shared document repository. See the Evaluation section for details.
 
-### Link data:
-[Download data](https://drive.google.com/drive/folders/1LO4wmj54lWgQvYiGKKAUSLSv5ypMjcDA?usp=drive_link)
+## Technical Approach
+Our solution combines multiple advanced techniques:
+* BM25 for initial document retrieval
+* Bi-encoder for semantic encoding
+* Cross-encoder for result reranking
+* Data chunking for efficient text processing
+
+## Model Checkpoints
+
+### BM25 Model
+Download the BM25 model checkpoint:
+```bash
+wget https://drive.google.com/file/d/1VFT7UiMXgoJzGKqWxId4LORq9v0VcW7T/view?usp=drive_link -O bm25/bm25_model.pkl
+```
+
+### Fine-tuned Language Model
+Access our fine-tuned BGE-M3 model:
+* Model: [Quintu/bge-m3-legal_retrieval](https://huggingface.co/Quintu/bge-m3-legal_retrieval)
+
+## Dataset Setup
+Download the competition dataset:
+```bash
+wget https://drive.google.com/drive/folders/1LO4wmj54lWgQvYiGKKAUSLSv5ypMjcDA?usp=drive_link -O data.zip
+unzip data.zip
+```
+
+## Performance
+Our team achieved a Top 8 position using the combined approach of BM25, bi-encoder, and cross-encoder reranking with data chunking techniques.
