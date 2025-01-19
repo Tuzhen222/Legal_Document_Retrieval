@@ -34,7 +34,8 @@ Our solution combines multiple advanced techniques:
 ### BM25 Model
 Download the BM25 model checkpoint:
 ```bash
-wget https://drive.google.com/file/d/1VFT7UiMXgoJzGKqWxId4LORq9v0VcW7T/view?usp=drive_link -O bm25/bm25_model.pkl
+pip install gdown
+gdown "1VFT7UiMXgoJzGKqWxId4LORq9v0VcW7T" -O bm25/bm25_model.pkl
 ```
 
 ### Fine-tuned Language Model
@@ -44,8 +45,8 @@ Access our fine-tuned BGE-M3 model:
 ## Dataset Setup
 Download the competition dataset:
 ```bash
-wget https://drive.google.com/drive/folders/1LO4wmj54lWgQvYiGKKAUSLSv5ypMjcDA?usp=drive_link -O data.zip
-unzip data.zip
+pip install gdown
+gdown --folder 1LO4wmj54lWgQvYiGKKAUSLSv5ypMjcDA
 ```
 
 ## Performance
