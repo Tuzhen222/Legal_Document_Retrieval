@@ -29,8 +29,8 @@ def calculate_mrr(submit, answer):
         if rank: mrr_scores.append(1 / rank)
     return sum(mrr_scores) / len(mrr_scores) if mrr_scores else 0
 
-answer_df = read_csv('../data/original/val_data.csv') 
-submit_data = read_txt('../result/val/phase2/bge-bm25+bm25.txt')  
+answer_df = read_csv('../data/original/test_data.csv') 
+submit_data = read_txt('../result/test/phase1/bge+bm25.txt')  
 
 answer_dict = {row['qid']: row['cid'] for _, row in answer_df.iterrows()}
 
