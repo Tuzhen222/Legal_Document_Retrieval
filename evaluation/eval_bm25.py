@@ -3,7 +3,7 @@ import pandas as pd
 import json
 import csv
 
-file_path = '../result/test_search_bm25.npy'
+file_path = '../result/val_search_bm25.npy'
 data = np.load(file_path, allow_pickle=True)
 
 lines = []
@@ -11,7 +11,7 @@ for array_2d in data:
     line = [str(row[0]) for row in array_2d[:20]]
     lines.append(" ".join(line))
 
-csv_file = '../data/original/test_data.csv'
+csv_file = '../data/original/val_data.csv'
 qid_list = []
 with open(csv_file, mode='r', encoding='utf-8') as infile:
     reader = csv.DictReader(infile)
@@ -69,7 +69,7 @@ def calculate_mrr(submit, answer):
     mrr_scores = []
     for result in submit:
         qid = result[0]  
-        cids = result[1:11]  
+        cids = result[1:21]  
         answer_cids = answer.get(qid, [])
         rank = None
         for i, cid in enumerate(cids):
@@ -79,7 +79,7 @@ def calculate_mrr(submit, answer):
         if rank: mrr_scores.append(1 / rank)
     return sum(mrr_scores) / len(mrr_scores) if mrr_scores else 0
 
-answer_dict = read_csv_to_dict('../data/original/test_data.csv')
+answer_dict = read_csv_to_dict('../data/original/val_data.csv')
 submit_data = parse_combined_results(output_combined_updated)
 
 precision_score = calculate_precision(submit_data, answer_dict)
