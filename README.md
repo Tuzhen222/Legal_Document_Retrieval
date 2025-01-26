@@ -51,3 +51,7 @@ gdown --folder 1LO4wmj54lWgQvYiGKKAUSLSv5ypMjcDA
 
 ## Performance
 Our team achieved a Top 8 position using the combined approach of BM25, bi-encoder, and cross-encoder reranking with data chunking techniques.
+
+## Video
+
+Watch our project report video here: Project Report [Project Report Video](https://www.youtube.com/watch?v=7NmFXgzTgr8)
